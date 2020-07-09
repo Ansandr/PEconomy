@@ -26,7 +26,7 @@ public class Database {
 			int port = config.getInt("database.port", 3306);
 			this.user = config.getString("database.user", "admin");
 			this.password = config.getString("database.password", "peconomy");
-			this.url = "jdbc:mysql://" + host + ":" + port + "/" + name;
+			this.url = "jdbc:mysql://" + host + ":" + port + "/" + name + "?autoReconnect=true";
 			Class.forName("com.mysql.jdbc.Driver").newInstance();
 		} else {
 			String file = config.getString("database.file", "peconomy.db");
